@@ -532,3 +532,9 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+//sc
+void
+hello(void) {
+  cprintf("\n\n Hello form your kernel space! \n\n");
+}
