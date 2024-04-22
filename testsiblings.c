@@ -29,6 +29,6 @@ int main(int argc, char *argv[])
 {
     // printf(1, "\nlab1 part1: test getsiblings\n");
     getSibling();
-    exit();
+    exit(0);
     // return 0;
 }
