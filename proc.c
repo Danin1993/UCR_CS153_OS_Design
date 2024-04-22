@@ -538,3 +538,21 @@ void
 hello(void) {
   cprintf("\n\n Hello form your kernel space! \n\n");
 }
+
+int 
+getsiblings(void) {
+    struct proc *p;
+    struct proc *curproc = myproc();
+    int parent_pid = curproc->parent->pid;
+    int sibling_pid = -1; 
+
+    acquire(&ptable.lock);
+    for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+        if (p->state != UNUSED && p->parent->pid == parent_pid && p->pid != curproc->pid) {
+            sibling_pid = p->pid;
+            break; 
+        }
+    }
+    release(&ptable.lock);
+    return sibling_pid; 
+}

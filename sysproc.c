@@ -95,3 +95,8 @@ sys_hello(void) {
   hello();
   return 0;
 }
+
+int
+sys_getsiblings(void) {
+  return getsiblings();
+}
