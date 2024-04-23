@@ -539,8 +539,9 @@ hello(void) {
   cprintf("\n\n hello from kernal side\n\n");
 }
 
-void
+int
 getsb(void)
 {
   cprintf("\n\n hello from getsb side\n\n");
+  return 999;
 }

@@ -9,6 +9,6 @@ int main(int argc, char *argv[])
 
     //hello();  // Ensure this function is defined somewhere in your project
     //getsb();
-    printf(1 ,"\n THIS IS THE ID : %d\n", 10);  // Changed single quotes to double quotes
+    printf(1 ,"\n THIS IS THE ID : %d\n", getsb());  // Changed single quotes to double quotes
     exit();  // Added 0 as argument to properly exit the program
 }
