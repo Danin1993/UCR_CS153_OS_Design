@@ -11,7 +11,7 @@ int main (int argc, char *argv[]) {
     else
     {
         int status = 0;
-        waitpid(, &status,0);
+        waitpid(14, &status,0);
         printf(1,"STATUS IS: %d\n", status);
     }
 
