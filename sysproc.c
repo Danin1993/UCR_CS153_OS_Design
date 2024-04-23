@@ -96,3 +96,9 @@ sys_hello(void){
   return 0;
 }
 
+int
+sys_getsb(void)
+{
+  getsb();
+  return 0;
+}
