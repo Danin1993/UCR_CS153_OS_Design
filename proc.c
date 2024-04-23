@@ -296,14 +296,17 @@ wait(int* status)
         p->name[0] = 0;
         p->killed = 0;
         p->state = UNUSED;
-	if(status){
-        *status = p->exitStatus;
+
+	      if(status){
+          *status = p->exitStatus;
         }
-	p->exitStatus = 0;
-        release(&ptable.lock);
-        return pid;
-      }
-    }
+
+        p->exitStatus = 0;
+              release(&ptable.lock);
+              return pid;
+            }
+        }
+        
     // No point in waiting if we don't have any children.
     if(!havekids || curproc->killed){
       release(&ptable.lock);

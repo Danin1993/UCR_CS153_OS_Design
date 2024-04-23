@@ -6,7 +6,7 @@ int main (int argc, char *argv[]) {
 
     if (fork() == 0) // this is a child
     {
-        printf(1,"Child Runing %d\n", 10);
+        fork();
     }
     else
     {
@@ -15,5 +15,5 @@ int main (int argc, char *argv[]) {
         printf(1,"sssssssss %d\n", status);
     }
 
-    exit(-99);
+    exit(100);
 }
