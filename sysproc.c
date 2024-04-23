@@ -23,7 +23,9 @@ sys_exit(void)  // Lab 1 Checked
 int
 sys_wait(void)  // Lab 1 checked
 {
-  return wait(0);
+  int *status;
+  argptr(0, (void*)&status, sizeof(status));
+  return wait(status);
 }
 
 int
