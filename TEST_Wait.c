@@ -3,7 +3,17 @@
 #include "user.h"
 
 int main (int argc, char *argv[]) {
-    //printf(1, "hello world\n");
-    hello(); // J.H.
-    exit(0);
+
+    if (fork() == 0) // this is a child
+    {
+        printf(1,"Child Runing %d\n", 10);
+    }
+    else
+    {
+        int status = 0;
+        wait(&status);
+        printf(1,"sssssssss %d\n", status);
+    }
+
+    exit(-99);
 }
