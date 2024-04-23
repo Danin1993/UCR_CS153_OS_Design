@@ -1,7 +1,7 @@
 // System call numbers
 #define SYS_fork    1
 #define SYS_exit    2
-#define SYS_wait    3
+#define SYS_wait    3       // Lab 1 Checked
 #define SYS_pipe    4
 #define SYS_read    5
 #define SYS_kill    6
@@ -20,5 +20,5 @@
 #define SYS_link   19
 #define SYS_mkdir  20
 #define SYS_close  21
-#define SYS_hello  22 //sc
-#define SYS_getsiblings 23 //sc
+#define SYS_hello  22       // Lab 0
+#define SYS_getsiblings 23  // Lab 1

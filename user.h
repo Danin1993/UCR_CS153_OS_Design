@@ -2,9 +2,12 @@ struct stat;
 struct rtcdate;
 
 // system calls
+int hello(void);                            // LAB 0 
+int getsiblings(void);                      // LAB 1 - Stem 1
+int exit(int) __attribute__((noreturn));    // LAB 1 - Step 2,3
+int wait(int *status);                      // Lab 1 - step 4
+
 int fork(void);
-int exit(int) __attribute__((noreturn));
-int wait(void);
 int pipe(int*);
 int write(int, const void*, int);
 int read(int, void*, int);
@@ -23,8 +26,8 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
-int hello(void); // sc
-int getsiblings(void); //sc
+
+
 // ulib.c
 int stat(const char*, struct stat*);
 char* strcpy(char*, const char*);

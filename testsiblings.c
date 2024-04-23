@@ -19,8 +19,8 @@ void getSibling(void){
             }
         }
     }
-    wait();
-    wait();
+    wait(0);
+    wait(0);
     return;
 }
 // test

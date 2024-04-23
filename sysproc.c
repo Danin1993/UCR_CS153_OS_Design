@@ -14,16 +14,16 @@ sys_fork(void)
 }
 
 int
-sys_exit(void)
+sys_exit(void)  // Lab 1 Checked
 {
   exit(-1);
-  return 0;  // not reached
+  return 0;
 }
 
 int
-sys_wait(void)
+sys_wait(void)  // Lab 1 checked
 {
-  return wait();
+  return wait(0);
 }
 
 int
