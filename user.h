@@ -6,6 +6,7 @@ int hello(void);                            // LAB 0
 int getsiblings(void);                      // LAB 1 - Stem 1
 int exit(int) __attribute__((noreturn));    // LAB 1 - Step 2,3
 int wait(int *status);                      // Lab 1 - step 4
+int waitpid(int,int*,int);                  // Lab 1 - step 5
 
 int fork(void);
 int pipe(int*);

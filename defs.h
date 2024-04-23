@@ -122,6 +122,7 @@ void            wakeup(void*);
 void            yield(void);
 void            hello(void);        // Lab 0
 int             getsiblings(void);  // Lab 1
+int             waitpid(int,int*,int); //Lab 1
 // swtch.S
 void            swtch(struct context**, struct context*);
 

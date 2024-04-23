@@ -22,3 +22,4 @@
 #define SYS_close  21
 #define SYS_hello  22       // Lab 0
 #define SYS_getsiblings 23  // Lab 1
+#define SYS_waitpid 24 // Lab 1

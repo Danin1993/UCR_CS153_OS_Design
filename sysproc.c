@@ -17,7 +17,7 @@ int
 sys_exit(void)  // Lab 1 Checked
 {
   int status;
-  
+
   if(argint(0,&status)<0)
   {
    return -1;
@@ -108,4 +108,19 @@ sys_hello(void) {
 int
 sys_getsiblings(void) {
   return getsiblings();
+}
+
+int
+sys_waitpid(void)
+{ 
+  int pid;
+  int options = 0; // default value
+  int* status;
+  if(argint(0, &pid) < 0){
+   return -1;
+  }
+  if(argptr(1,(void*)&status, sizeof(status)) < 0){ 
+  return -1; 
+  }
+  return waitpid(pid, status, options);
 }

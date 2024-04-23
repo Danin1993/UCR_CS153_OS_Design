@@ -184,6 +184,7 @@ UPROGS=\
 	_TEST_LAB0\
 	_TEST_Sibilings\
 	_TEST_Wait\
+	_TEST_Waitpid\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
