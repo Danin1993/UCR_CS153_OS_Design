@@ -4,5 +4,6 @@
 
 int mian(int argc, char *argv[])
 {
-        exit();
+    hello();
+    exit();
 }
