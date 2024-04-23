@@ -97,7 +97,7 @@ sys_hello(void){
 }
 
 int
-sys_getsb(void)
+sys_getsiblings(void)
 {
-  return getsb();
+  return getsiblings();
 }

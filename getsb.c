@@ -2,13 +2,32 @@
 #include "stat.h"
 #include "user.h"
 
+
+void getSibling(void){
+    int pid1, pid2;
+    pid1 = fork();
+    if (pid1 == 0) {
+        sleep(10);
+    } else {
+        printf(1, "sibling 1 pid: %d\n", pid1);
+        pid2 = fork();
+        if (pid2 == 0) {
+            // check if the sibling is pid1
+            printf(1, "getsiblings pid %d\n", getsiblings());
+            if (pid1 == getsiblings()) {
+                printf(1, "sibling pid matches with sibling1\n");
+            } else {
+                printf(1, "sibling pid DOES NOT matches with sibling1\n");
+            }
+        }
+    }
+    wait();
+    wait();
+    return;
+}
+
 int main(int argc, char *argv[])
 {
-    //fork();
-    //fork();
-
-    //hello();  // Ensure this function is defined somewhere in your project
-    //getsb();
-    printf(1 ,"\n THIS IS THE ID : %d\n", getsb());  // Changed single quotes to double quotes
-    exit();  // Added 0 as argument to properly exit the program
+    getSibling();
+    exit();
 }
