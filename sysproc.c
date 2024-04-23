@@ -14,16 +14,25 @@ sys_fork(void)
 }
 
 int
-sys_exit(void)
+sys_exit(void)  // Lab 1 Checked
 {
-  exit();
-  return 0;  // not reached
+  int status;
+
+  if(argint(0,&status)<0)
+  {
+   return -1;
+  }
+
+  exit(status);
+  return 0;
 }
 
 int
-sys_wait(void)
+sys_wait(void)  // Lab 1 checked
 {
-  return wait();
+  int *status;
+  argptr(0, (void*)&status, sizeof(status));
+  return wait(status);
 }
 
 int
@@ -88,4 +97,30 @@ sys_uptime(void)
   xticks = ticks;
   release(&tickslock);
   return xticks;
+}
+
+int 
+sys_hello(void) {
+  hello();
+  return 0;
+}
+
+int
+sys_getsiblings(void) {
+  return getsiblings();
+}
+
+int
+sys_waitpid(void)
+{ 
+  int pid;
+  int options = 0; // default value
+  int* status;
+  if(argint(0, &pid) < 0){
+   return -1;
+  }
+  if(argptr(1,(void*)&status, sizeof(status)) < 0){ 
+  return -1; 
+  }
+  return waitpid(pid, status, options);
 }

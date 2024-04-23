@@ -101,13 +101,16 @@ extern int sys_sbrk(void);
 extern int sys_sleep(void);
 extern int sys_unlink(void);
 extern int sys_wait(void);
-extern int sys_write(void);
+extern int sys_write(void);       // Lab 1 Checked
 extern int sys_uptime(void);
+extern int sys_hello(void);       // Lab 0
+extern int sys_getsiblings(void); // Lab 1
+extern int sys_waitpid(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
 [SYS_exit]    sys_exit,
-[SYS_wait]    sys_wait,
+[SYS_wait]    sys_wait,           // Lab 1 Checked
 [SYS_pipe]    sys_pipe,
 [SYS_read]    sys_read,
 [SYS_kill]    sys_kill,
@@ -126,6 +129,9 @@ static int (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
+[SYS_hello]   sys_hello,           //Lab 0
+[SYS_getsiblings] sys_getsiblings, //Lab 1
+[SYS_waitpid] sys_waitpid,
 };
 
 void
