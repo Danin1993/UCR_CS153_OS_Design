@@ -532,3 +532,9 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+
+void 
+hello(void) {
+  cprintf("\n\n hello from kernal side\n\n");
+}
